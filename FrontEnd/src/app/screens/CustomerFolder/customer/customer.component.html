@@ -1,0 +1,21 @@
+<div class="heades">
+  <button class="btn mr-1" (click)="this.OnClickNav=1">פרטים אישיים</button>
+  <button class="btn mr-1" (click)="this.OnClickNav=2">עדכון פרטים אישיים</button>
+  <button class="btn mr-1" (click)="this.OnClickNav=3">שינוי סוג משתמש</button>
+</div>
+
+<app-customer-detaills [CustomerDetaills]="CustomerDetaills" [Token]="Token" *ngIf="this.OnClickNav==1"></app-customer-detaills>
+
+<app-update-customer [CustomerDetaills]="CustomerDetaills" [Token]="Token" [passwordMd5]="passwordMd5" *ngIf="this.OnClickNav==2"></app-update-customer>
+
+<app-customer-to-merchant [Token]="Token" *ngIf="this.OnClickNav==3"></app-customer-to-merchant>
+
+
+
+
+
+
+
+
+
+

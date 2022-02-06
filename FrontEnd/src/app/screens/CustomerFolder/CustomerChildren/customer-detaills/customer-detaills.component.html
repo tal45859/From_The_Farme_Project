@@ -1,0 +1,31 @@
+<div class="container heades" >
+  <h2>פרטים אישיים</h2>
+  <div class="table-responsive">
+  <table dir="rtl" class="table table-dark table-hover">
+    <thead>
+      <tr>
+        <th>שם פרטי</th>
+        <th>שם משפחה</th>
+        <th>סוג</th>
+        <th>תאריך לידה</th>
+        <th>טלפון</th>
+        <th>עיר</th>
+        <th>מייל</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{CustomerDetaills.User.FirstName}}</td>
+        <td>{{CustomerDetaills.User.LastName}}</td>
+        <td>{{CustomerDetaills.User.Role}}</td>
+        <td>{{CustomerDetaills.User.Birthdate|date:'dd-MM-yyyy'}}</td>
+        <td>{{CustomerDetaills.User.Phone}}</td>
+        <td>{{CustomerDetaills.City}}</td>
+        <td><a href="mailto:{{CustomerDetaills.User.Mail}}">{{CustomerDetaills.User.Mail}}</a></td>
+        <td><button (click)="OnClickDelete()">מחק משתמש</button></td>
+    </tbody>
+  </table>
+</div>
+ <app-toast-b  [Messages]="this.Message" (close)="ChangeOpenAlert($event)" *ngIf="this.OpenAlert==1"></app-toast-b>
+</div>

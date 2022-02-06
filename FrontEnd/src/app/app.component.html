@@ -1,0 +1,14 @@
+<div class="wid">
+  <app-header *ngIf="roleForNav==null" class="header" [MenuItemData]="UserItems" ></app-header>
+  <app-header  *ngIf="roleForNav=='Admin'" class="header" [MenuItemData]="AdminItems" ></app-header>
+  <app-header  *ngIf="roleForNav=='Customer'" class="header" [MenuItemData]="CustomerItems" ></app-header>
+  <app-header  *ngIf="roleForNav=='Merchant'" class="header" [MenuItemData]="MercahntItems" ></app-header>
+</div>
+<main class="d-flex flex-column justify-content-between h-100">
+<div class="bg" >
+   <!-- <app-home class="col-2" id="home"></app-home> -->
+   <app-content class="col-10"></app-content>
+ <!-- <app-content class="col-10" ></app-content>  -->
+</div>
+<app-footer class="footer"></app-footer>
+</main>

@@ -1,0 +1,44 @@
+<div class="c1 container mt-4 mb-3 w-25 p-3 border border-secondary   text-dark n form">
+  <h1> התחברות </h1>
+
+  <div class="detail">
+    <div class="mb-3">
+       <input
+        class="form-control  {{Response[0].Isok ? '':'is-invalid'}}"
+       type="text"  maxlength="20" placeholder="מייל" [(ngModel)]="LoginObj.email"
+       aria-describedby="validationServerEmailFeedback" required>
+        <div id="validationServerEmailFeedback" class="invalid-feedback">
+        {{Response[0].Message}}
+        </div>
+      </div>
+
+       <div class="mb-3">
+         <input
+          class="form-control {{Response[1].Isok ? '':'is-invalid'}}"
+         type="{{Type}}" maxlength="16" [(ngModel)]="LoginObj.password"  placeholder="סיסמה"
+         aria-describedby="validationServerPasswordFeedback" required>
+         <div>
+           <!-- <li class="fas fa-eye"></li> -->
+          <i class="{{ShowPassword ? 'fas fa-eye' : 'fas fa-eye-slash' }}"
+           (click)="ShowPassword ? ShowPassword=false : ShowPassword=true ; Type =='password' ? Type ='text' : Type='password' " ></i>
+         </div>
+
+         <div id="validationServerPasswordFeedback" class="invalid-feedback">
+         {{Response[1].Message}}
+         </div>
+      </div>
+
+      <div class="mb-1">
+        <p class="text-danger">{{ErrorMesssage}}</p>
+        </div>
+  </div>
+
+      <div>
+        <b class="defult"><a  href="ForgotPasswordComponent">שכחתי סיסמה?</a></b>
+        <b> / </b>
+        <b class="defult" ><a href="RegisterComponent">הרשמה</a></b>
+      </div>
+  <button class="bt btn"  (click)="OnGetUtha()"><b>התחבר</b></button>
+
+</div>
+

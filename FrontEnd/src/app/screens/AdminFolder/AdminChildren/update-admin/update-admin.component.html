@@ -1,0 +1,72 @@
+<!-- <div class="container">
+  <h2 class="heades">עדכון פרטים אישיים</h2>
+  <div><input  type="text" placeholder="שדה חובה אנא הזן" onKeyPress="if(this.value.length==10) return false;" [(ngModel)]="AdminDetaills.FirstName"><b>:שם פרטי</b></div>
+  <div><input  type="text" placeholder="שדה חובה אנא הזן" onKeyPress="if(this.value.length==10) return false;" [(ngModel)]="AdminDetaills.LastName"><b>:שם משפחה</b></div>
+  <div><input type="date" value="{{AdminDetaills.Birthdate|date:'dd-MM-yyyy'}}" [(ngModel)]="AdminDetaills.Birthdate"><b>:תאריך לידה</b></div>
+  <div><input  type="text" (click)="this.ErrorMessage =''" placeholder="שדה חובה אנא הזן" onKeyPress="if(this.value.length==12) return false;" [(ngModel)]="AdminDetaills.Phone"><b>:טלפון</b></div>
+  <div><input  type="password" (click)="this.ErrorMessage =''" placeholder="שדה חובה אנא הזן" onKeyPress="if(this.value.length==16) return false;" [(ngModel)]="AdminDetaills.Password"><b>:סיסמה</b></div>
+  <div><p class="heades" style="color: red;">{{ErrorMessage}}</p></div>
+  <button class="mobUpdate" style="margin-left: 47%;" (click)="OnUpdate()">עדכן</button>
+  <app-toast-b  [Messages]="this.Message" (close)="ChangeOpenAlert($event)" *ngIf="this.OpenAlert==1"></app-toast-b>
+</div>
+ -->
+ <div class="container mt-4 mb-3 w-25 p-3 border border-secondary  text-dark  form"  dir="rtl">
+
+  <h2 class="mb-3">עדכון פרטים אישיים</h2>
+
+  <div class="mb-3">
+    <label><strong>שם פרטי</strong></label>
+    <input  [(ngModel)]="AdminDetaills.FirstName"  type="text" placeholder="שדה חובה אנא הזן" maxlength="10"
+     class="{{this.Response[0].Isok && AdminDetaills.FirstName.length!=0 ? 'form-control is-valid' : 'form-control is-invalid'}}"
+      aria-describedby="validationServerFirstNameFeedback"   required>
+    <div id="validationServerFirstNameFeedback" class="invalid-feedback">
+      {{this.Response[0].Message}}
+    </div>
+  </div>
+
+
+  <div class="mb-3">
+    <label><strong>שם משפחה</strong></label>
+    <input  [(ngModel)]="AdminDetaills.LastName"  type="text" placeholder="שדה חובה אנא הזן" maxlength="10"
+     class="{{this.Response[1].Isok && AdminDetaills.LastName.length!=0 ? 'form-control is-valid' : 'form-control is-invalid'}}"
+      aria-describedby="validationServerLastNameFeedback"   required>
+    <div id="validationServerLastNameFeedback" class="invalid-feedback">
+      {{this.Response[1].Message}}
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label><strong>תאריך לידה</strong></label>
+    <input  [(ngModel)]="AdminDetaills.Birthdate"  type="date" placeholder="שדה חובה אנא הזן"
+     class="{{this.Response[2].Isok && AdminDetaills.Birthdate!=null ? 'form-control is-valid' : 'form-control is-invalid'}}"
+      aria-describedby="validationServerBirthdateFeedback"   required>
+    <div id="validationServerBirthdateFeedback" class="invalid-feedback">
+      {{this.Response[2].Message}}
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label><strong>טלפון</strong></label>
+    <input  [(ngModel)]="AdminDetaills.Phone"  type="text" placeholder="שדה חובה אנא הזן" maxlength="12"
+     class="{{this.Response[3].Isok && AdminDetaills.Phone.length!=0 ? 'form-control is-valid' : 'form-control is-invalid'}}"
+      aria-describedby="validationServerPhoneFeedback"   required>
+    <div id="validationServerPhoneFeedback" class="invalid-feedback">
+      {{this.Response[3].Message}}
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label><strong>סיסמה</strong></label>
+    <input  [(ngModel)]="AdminDetaills.Password"  type="{{Type}}" placeholder="שדה חובה אנא הזן" maxlength="16"
+     class="{{this.Response[4].Isok && AdminDetaills.Password.length!=0 ? 'form-control is-valid' : 'form-control is-invalid'}}"
+      aria-describedby="validationServerPasswordFeedback"   required>
+      <i class="{{this.ShowPassword ? 'fas fa-eye' :'fas fa-eye-slash'}}" (click)="!ShowPassword ? ShowPassword=true : ShowPassword=false; Type=='password' ? Type='text':Type='password'"  title="ראה סיסמה"></i>
+    <div id="validationServerPasswordFeedback" class="invalid-feedback">
+      {{this.Response[4].Message}}
+    </div>
+  </div>
+
+  <button (click)="OnUpdate()">עדכן</button>
+<div class="mb-3 mt-3"><app-toast-b  [Messages]="this.Message" (close)="ChangeOpenAlert($event)" *ngIf="this.OpenAlert==1"></app-toast-b></div>
+</div>
+

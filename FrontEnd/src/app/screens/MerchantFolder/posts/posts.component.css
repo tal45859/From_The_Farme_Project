@@ -1,0 +1,18 @@
+.heades{
+  margin-top: 10px;
+  margin-bottom: 25px;
+  text-align: center;
+  direction: rtl;
+}
+button {
+  text-align: center;
+  background-color: #19ac31;
+  border: none;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  display: inline-block;
+}
+button:hover {
+  background-color: #ddd;
+}
+

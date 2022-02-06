@@ -1,0 +1,45 @@
+<div class="container">
+  <h2 class="heades">רשימת מנהלים</h2>
+<app-search [AdminArr]="AdminArr" [Id]=1 (HasMail)="ChangeHasMail($event)"  (Email)="GetEmail($event)"></app-search>
+<div class="table-responsive">
+<table dir="rtl" class="table table-dark table-hover">
+<thead>
+<tr>
+  <th>שם מלא</th>
+  <th>מייל</th>
+  <th>נייד</th>
+  <th>סטטוס</th>
+  <th>תאריך לידה</th>
+  <th>התחבר לאחרונה</th>
+  <th>תאריך הרשמה</th>
+  <th></th>
+  <th></th>
+</tr>
+</thead>
+<tbody *ngFor="let item of AdminArr">
+<tr *ngIf="this.HasMail==false" >
+  <td>{{item.FirstName}} {{item.LastName}}</td>
+  <td><a href="mailto:{{item.Mail}}">{{item.Mail}}</a></td>
+  <td>{{item.Phone}}</td>
+  <td>{{item.IsActive}}</td>
+  <td>{{item.Birthdate|date:'dd-MM-yyyy'}}</td>
+  <td>{{item.LastLogin|date:'dd-MM-yyyy'}}</td>
+  <td>{{item.RegisterDate|date:'dd-MM-yyyy'}}</td>
+  <td><button title="הורדה לדרגת לקוח" (click)="OnClickDownRank(item.Id)">-</button></td>
+  <td><button title="מחיקת משתמש" (click)="OnClickDelete(item.Id)">X</button></td>
+</tr>
+<tr *ngIf="this.HasMail == true && EmailToFind==item.Mail">
+  <td>{{item.FirstName}} {{item.LastName}}</td>
+  <td><a href="mailto:{{item.Mail}}">{{item.Mail}}</a></td>
+  <td>{{item.Phone}}</td>
+  <td>{{item.IsActive}}</td>
+  <td>{{item.Birthdate|date:'dd-MM-yyyy'}}</td>
+  <td>{{item.LastLogin|date:'dd-MM-yyyy'}}</td>
+  <td>{{item.RegisterDate|date:'dd-MM-yyyy'}}</td>
+  <td><button title="הורדה לדרגת לקוח" (click)="OnClickDownRank(item.Id)">-</button></td>
+  <td><button title="מחיקת משתמש" (click)="OnClickDelete(item.Id)">X</button></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>

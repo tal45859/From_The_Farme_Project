@@ -1,0 +1,45 @@
+  <div class="container mt-4 mb-3 w-25 p-3 border border-secondary text-dark n form">
+    <h1 class="mb-3"> הוספת מוצר </h1>
+
+    <div class="mb-3">
+      <input
+       class="form-control  {{Response[0].Isok ? '':'is-invalid'}}"
+      type="text"  maxlength="15" placeholder="שם מוצר" [(ngModel)]="this.ProductObj.ProductName"
+      aria-describedby="validationServerProductNameFeedback" required>
+       <div id="validationServerProductNameFeedback" class="invalid-feedback">
+       {{Response[0].Message}}
+       </div>
+     </div>
+
+     <div class="mb-3">
+      <input
+       class="form-control  {{Response[1].Isok ? '':'is-invalid'}}"
+      type="number"  maxlength="6" placeholder="מחיר לקג" [(ngModel)]="this.ProductObj.UnitPrice"
+      aria-describedby="validationServerUnitPriceFeedback" required>
+       <div id="validationServerUnitPriceFeedback" class="invalid-feedback">
+       {{Response[1].Message}}
+       </div>
+     </div>
+
+     <div class="mb-3">
+      <input
+       class="form-control  {{Response[2].Isok ? '':'is-invalid'}}"
+      type="number"  maxlength="6" placeholder="כמות במלאי" [(ngModel)]="this.ProductObj.UnitInStock"
+      aria-describedby="validationServerUnitInStockFeedback" required>
+       <div id="validationServerUnitInStockFeedback" class="invalid-feedback">
+       {{Response[2].Message}}
+       </div>
+     </div>
+
+     <div class="mb-3">
+      <input
+       class="form-control  {{Response[3].Isok ? '':'is-invalid'}}"
+      type="text"  maxlength="40" placeholder="פרטים נוספים" [(ngModel)]="this.ProductObj.MoreInfo"
+      aria-describedby="validationServerMoreInfoFeedback" required>
+       <div id="validationServerMoreInfoFeedback" class="invalid-feedback">
+       {{Response[3].Message}}
+       </div>
+     </div>
+
+     <div><button class="mb-3" (click)="OnAddProduct()">הוסף מוצר</button></div>
+  </div>

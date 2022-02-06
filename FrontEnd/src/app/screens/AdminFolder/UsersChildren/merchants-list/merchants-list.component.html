@@ -1,0 +1,42 @@
+<div class="heades container">
+    <h2 class="heades">רשימת סוחרים</h2>
+    <app-search [MerchantArr]="MerchantArr" [Id]=3 (HasMail)="ChangeHasMail($event)"  (Email)="GetEmail($event)"></app-search>
+    <div class="table-responsive">
+    <table dir="rtl" class="table table-dark table-hover">
+    <thead>
+      <tr>
+        <th>שם מלא</th>
+        <th>מייל</th>
+        <th>נייד</th>
+        <th>סטטוס</th>
+        <th>תאריך לידה</th>
+        <th>התחבר לאחרונה</th>
+        <th>תאריך הרשמה</th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody *ngFor="let item of MerchantArr">
+      <tr *ngIf="this.HasMail==false">
+        <td>{{item.User.FirstName}} {{item.User.LastName}}</td>
+        <td><a href="mailto:{{item.User.Mail}}">{{item.User.Mail}}</a></td>
+        <td>{{item.User.Phone}}</td>
+        <td>{{item.User.IsActive}}</td>
+        <td>{{item.User.Birthdate|date:'dd-MM-yyyy'}}</td>
+        <td>{{item.User.LastLogin|date:'dd-MM-yyyy'}}</td>
+        <td>{{item.User.RegisterDate|date:'dd-MM-yyyy'}}</td>
+        <td><button title="מחיקת משתמש" (click)="OnClickDelete(item.UserId)">X</button></td>
+      </tr>
+      <tr *ngIf="this.HasMail==true && EmailToFind==item.User.Mail">
+        <td>{{item.User.FirstName}} {{item.User.LastName}}</td>
+        <td><a href="mailto:{{item.User.Mail}}">{{item.User.Mail}}</a></td>
+        <td>{{item.User.Phone}}</td>
+        <td>{{item.User.IsActive}}</td>
+        <td>{{item.User.Birthdate|date:'dd-MM-yyyy'}}</td>
+        <td>{{item.User.LastLogin|date:'dd-MM-yyyy'}}</td>
+        <td>{{item.User.RegisterDate|date:'dd-MM-yyyy'}}</td>
+        <td><button title="מחיקת משתמש" (click)="OnClickDelete(item.UserId)">X</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

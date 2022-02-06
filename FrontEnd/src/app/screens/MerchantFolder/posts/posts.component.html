@@ -1,0 +1,7 @@
+<div class="heades">
+  <button  (click)="OnClickBtn(1)" class="btn mr-1">המודעות שלי</button>
+  <button (click)="OnClickBtn(2)" class="btn mr-1">הוספת מודעה</button>
+</div>
+
+<app-all-post (ReastAllPostPlease)="OnGetAllPostsByMerchantJWT()" [HomeOrPosts]=2  [AllPostArr]="MerchantPostArr" (UpdateArrForPosts)="ChangeUpdateArrForPosts($event)" *ngIf="ClickId==1"></app-all-post>
+<app-add-post-home [Token]="Token" *ngIf="ClickId==2"></app-add-post-home>

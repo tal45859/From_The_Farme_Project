@@ -1,0 +1,21 @@
+<div class="container mt-4 mb-3 w-25 p-3 border border-secondary text-dark n form">
+  <h1 class="mb-3"> עדכון מודעה </h1>
+
+  <div class="mb-3">
+    <input class="btn btn-success ml-1" type="button" (click)="this.UpdatePost.CategoryId=1" value="ירקות">
+    <input class="btn btn-warning" type="button" (click)="this.UpdatePost.CategoryId=2" value="פירות">
+    <div class="mb-3 mt-2 {{ UpdatePost.CategoryId == 1 ? 'text-success': 'text-warning'}}">
+      <strong *ngIf="UpdatePost.CategoryId==1">הקטגוריה הנוכחית : ירקות</strong>
+      <strong *ngIf="UpdatePost.CategoryId==2">הקטגוריה הנוכחית : פירות</strong>
+    </div>
+  </div>
+
+  <div class="form-check mb-3">
+    <label>
+      שילוח
+    </label>
+    <input class="form-check-input" type="checkbox" [(ngModel)]="this.UpdatePost.IsShip" >
+  </div>
+
+  <div class="mb-3"><button (click)="OnClickNext()">המשך</button></div>
+  </div>

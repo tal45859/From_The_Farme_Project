@@ -1,0 +1,39 @@
+<div class="container" *ngIf="NumOfStage==1">
+  <div>
+    <app-post-search [AllPostArr]="AllPostArr" (HomeOrPosts)="RestAllPost()" (UpdatePostArr)="changeAllPostArrAfterSearch($event)" (Page)="ReastPage($event)" ></app-post-search>
+  </div>
+
+  <div class="grid-container">
+    <div *ngFor="let item of AllPostArr | paginate: { itemsPerPage: 8, currentPage: page  }" class="col">
+
+      <div class="card mb-4" style="width: 12rem;">
+        <img src="{{this.singleImage(item.Id)}}" class="card-img-top" alt="..." style="width: 11.88rem; height:190px;">
+        <div class="card-body">
+          <h5 class="card-title">{{item.Product.ProductName}}</h5>
+          <p class="card-text">מחיר לק"ג: ₪{{item.Product.UnitPrice}}</p>
+          <p class="card-text">אזור:{{item.Merchant.City}}</p>
+          <button class="col btmarg" (click)="OnClickOpenPostDetails(item)">פרטים נוספים</button>
+          <div class="row">
+            <button class="col btmarg  mt-1" *ngIf="this.HomeOrPosts==2 && this.Role=='Merchant'"
+              (click)="OnClickUpdate(item)">עדכן</button>
+            <button class="col btmarg  mt-1" *ngIf=" this.HomeOrPosts==2 && this.Role=='Merchant'"
+              (click)="onclickDeleteForMerchant(item.Product.Id ,item.Id)">מחק</button>
+            <button class="btmarg col mt-1" *ngIf="this.HomeOrPosts==1 && Role=='Customer'"
+              (click)="OnCLiclAddFavorite(item.Id)">הוסף למועדפים</button>
+            <button class="btmarg col  mt-1" *ngIf="this.HomeOrPosts==1 && Role=='Admin'"
+              (click)="onclickDeleteForAdmin(item.Product.Id,item.Id)">מחק</button>
+              <button class="btmarg col  mt-1" *ngIf="this.HomeOrPosts==3 && Role=='Customer'"
+              (click)="onclickDeleteFavorite(item.Id)">מחק</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-toast-b  [Messages]="this.Message" (close)="ChangeOpenAlert($event)" *ngIf="this.OpenAlert==1"></app-toast-b>
+  <div class="d-flex justify-content-center mrgPagination">
+    <pagination-controls (pageChange)="page = $event" previousLabel="הקודם" nextLabel="הבא"></pagination-controls>
+  </div>
+</div>
+<app-post-details [PostObj]="PostObj"  (NumOfStage)="GetStage($event)" *ngIf="NumOfStage==2"></app-post-details>
+
+<app-update-post-home [UpdatePost]="PostObj" [Token]="Token" *ngIf="NumOfStage==3"></app-update-post-home>

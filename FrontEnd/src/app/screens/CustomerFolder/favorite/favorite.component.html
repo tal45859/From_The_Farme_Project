@@ -1,0 +1,3 @@
+<app-all-post (ReastAllPostPlease)="OnGetAllFavorite()" [HomeOrPosts]=3 [AllPostArr]="PostArr" (UpdateFavoriteToDeletePost)="DeleteFavoriteByPostId($event)" ></app-all-post>
+<app-toast-b  [Messages]="this.Message" (close)="ChangeOpenAlert($event)" *ngIf="this.OpenAlert==1"></app-toast-b>
+

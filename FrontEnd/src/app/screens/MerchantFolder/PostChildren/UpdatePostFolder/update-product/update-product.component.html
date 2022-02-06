@@ -1,0 +1,51 @@
+
+
+<div class="container mt-4 mb-3 w-25 p-3 border border-secondary text-dark n form">
+  <h1 class="mb-3"> עדכון מוצר </h1>
+
+  <div class="mb-3">
+    <label><strong>שם מוצר</strong></label>
+    <input
+     class="form-control  {{Response[0].Isok && this.UpdatePost.Product.ProductName.length !=0  ? 'is-valid':'is-invalid'}}"
+    type="text"  maxlength="15"  placeholder="שדה חובה אנא הזן" [(ngModel)]="this.UpdatePost.Product.ProductName"
+    aria-describedby="validationServerProductNameFeedback" required>
+     <div id="validationServerProductNameFeedback" class="invalid-feedback">
+     {{Response[0].Message}}
+     </div>
+   </div>
+
+   <div class="mb-3">
+    <label><strong>מחיר לקג</strong></label>
+    <input
+     class="form-control  {{Response[1].Isok && this.UpdatePost.Product.UnitPrice!=null &&this.UpdatePost.Product.UnitPrice!=0 ? 'is-valid':'is-invalid'}}"
+    type="number"  maxlength="6"  placeholder="שדה חובה אנא הזן" [(ngModel)]="this.UpdatePost.Product.UnitPrice"
+    aria-describedby="validationServerUnitPriceFeedback" required>
+     <div id="validationServerUnitPriceFeedback" class="invalid-feedback">
+     {{Response[1].Message}}
+     </div>
+   </div>
+
+   <div class="mb-3">
+    <label><strong></strong>כמות במלאי</label>
+    <input
+     class="form-control  {{Response[2].Isok && this.UpdatePost.Product.UnitInStock != null && this.UpdatePost.Product.UnitInStock!=0 ? 'is-valid':'is-invalid'}}"
+    type="number"  maxlength="6"  placeholder="שדה חובה אנא הזן" [(ngModel)]="this.UpdatePost.Product.UnitInStock"
+    aria-describedby="validationServerUnitInStockFeedback" required>
+     <div id="validationServerUnitInStockFeedback" class="invalid-feedback">
+     {{Response[2].Message}}
+     </div>
+   </div>
+
+   <div class="mb-3">
+    <label><strong></strong>פרטים נוספים</label>
+    <input
+     class="form-control  {{Response[3].Isok && this.UpdatePost.Product.MoreInfo.length!=0 ? 'is-valid':'is-invalid'}}"
+    type="text"  maxlength="40" placeholder="שדה חובה אנא הזן" [(ngModel)]="this.UpdatePost.Product.MoreInfo"
+    aria-describedby="validationServerMoreInfoFeedback" required>
+     <div id="validationServerMoreInfoFeedback" class="invalid-feedback">
+     {{Response[3].Message}}
+     </div>
+   </div>
+
+   <div class="mb-3 mt-3"><button  (click)="OnClickNext()">המשך</button></div>
+</div>

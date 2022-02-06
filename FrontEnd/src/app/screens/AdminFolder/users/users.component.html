@@ -1,0 +1,15 @@
+<div class="heades">
+  <button class="btn mr-1" (click)="this.BtnNav=1">מנהלים</button>
+  <button class="btn mr-1" (click)="this.BtnNav=2">סוחרים</button>
+  <button class="btn mr-1" (click)="this.BtnNav=3">לקוחות</button>
+</div>
+<div class="heades" *ngIf="BtnNav==1">
+  <div class="mb-1">
+    <button class="btn mr-1" (click)="this.OptionAdminBtn=1">רשימת מנהלים</button>
+    <button class="btn mr-1" (click)="this.OptionAdminBtn=2">הוספת מנהל</button>
+  </div>
+      <app-admins-list  [Token]="Token" *ngIf="OptionAdminBtn == 1" ></app-admins-list>
+      <app-add-admin  [Token]="Token" *ngIf="OptionAdminBtn == 2"></app-add-admin>
+</div>
+<app-merchants-list [Token]="Token" *ngIf="BtnNav==2"></app-merchants-list>
+<app-customers-list [Token]="Token" *ngIf="BtnNav==3"> </app-customers-list>

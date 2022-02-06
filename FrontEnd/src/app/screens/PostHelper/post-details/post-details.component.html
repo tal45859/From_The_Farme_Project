@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="dem"> <button (click)="OnClickBack()">X</button> </div>
+  <div class="row">
+    <div class="col mobimgMb">
+      <button *ngIf="PostImageArr.length>1" class="btimg" (click)="OnBack()">
+        <</button> <img src="{{PostImageArr[IdImage].Img}}" class="{{PostImageArr.length>1 ? 'imgmob' : 'imgmobForOne'}}"   alt="tttttt"
+          style="width: 450px; height: 350px;">
+          <button *ngIf="PostImageArr.length>1" class="btimg" (click)="OnFront()">></button>
+    </div>
+    <div class="col center">
+      <div class="pt-4">
+        <h1><b>{{PostObj.Product.ProductName}}</b></h1>
+      </div>
+      <div class="pt-1">
+        <h3>{{PostObj.Product.MoreInfo}}</h3>
+      </div>
+      <div class="pt-1">
+        <h6><b>סהכ במלאי: {{PostObj.Product.UnitInStock}} ק"ג</b></h6>
+      </div>
+      <div class="pt-1">
+        <h6><b>₪{{PostObj.Product.UnitPrice}} לק"ג </b></h6>
+        <hr>
+      </div>
+      <div *ngIf="PostObj.IsShip" class="pt-1">
+        <h6><b>אפשרות למשלוח</b></h6>
+        <hr>
+      </div>
+      <div *ngIf="!PostObj.IsShip" class="pt-1">
+        <h6><b>אין אפשרות למשלוח</b></h6>
+        <hr>
+      </div>
+      <div>
+        <table class="container">
+          <tr>
+            <th>שם</th>
+            <th>עיר</th>
+            <th>טלפון</th>
+          </tr>
+          <tr>
+            <td>{{PostObj.Merchant.User.FirstName}}</td>
+            <td>{{PostObj.Merchant.City}}</td>
+            <td><a href="tel:{{PostObj.Merchant.User.Phone}}">{{PostObj.Merchant.User.Phone}}</a></td>
+          </tr>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</div>

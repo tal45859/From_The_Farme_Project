@@ -1,0 +1,27 @@
+  <div dir="rtl"class="container mt-1 mb-3 w-25 p-3 text-dark n form">
+    <div class="mb-3">
+    <input type="text" (click)="OnClickResetInput() "maxlength="20" [placeholder]="placholderMail" [(ngModel)]="EmailToFind"
+    class="inputCyrcle form-control {{Response.Isok ? '':'is-invalid inputError'}}"
+    aria-describedby="validationServerErrorFeedback" required >
+    <div id="validationServerErrorFeedback" class="invalid-feedback">
+      {{Response.Message}}
+      </div>
+   </div>
+
+    <button (click)="onClickSearchByEmail()">חפש</button>
+</div>
+
+
+  <!-- <div class="container mt-4 mb-3 w-25 p-3 text-dark n form">
+    <h1 class="mb-3"> הוספת מוצר </h1>
+
+    <div class="mb-3">
+      <input
+       class="form-control  {{Response[0].Isok ? '':'is-invalid'}}"
+      type="text"  maxlength="15" placeholder="שם מוצר" [(ngModel)]="this.ProductObj.ProductName"
+      aria-describedby="validationServerProductNameFeedback" required>
+       <div id="validationServerProductNameFeedback" class="invalid-feedback">
+       {{Response[0].Message}}
+       </div>
+     </div>
+    </div> -->

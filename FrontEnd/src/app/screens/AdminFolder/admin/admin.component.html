@@ -1,0 +1,10 @@
+<div class="heades">
+  <button class="btn mr-1" (click)="this.OnClickNav=1" >פרטים אישיים</button>
+  <button class="btn " (click)="this.OnClickNav=2" >עדכון פרטים אישיים</button>
+</div>
+
+<app-admin-detaills  [AdminDetaills]="AdminDetaills" [Token]="Token"  *ngIf="this.OnClickNav==1"> </app-admin-detaills>
+
+<app-update-admin [AdminDetaills]="AdminDetaills" [Token]="Token" [passwordMd5]="passwordMd5" *ngIf="this.OnClickNav==2"></app-update-admin>
+
+

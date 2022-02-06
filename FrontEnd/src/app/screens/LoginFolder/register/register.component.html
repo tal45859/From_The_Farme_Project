@@ -1,0 +1,119 @@
+<div class="container mt-4 mb-3 w-25 p-3 border border-secondary text-dark n form">
+  <div><button class="dem" title="חזור לדף התחברות"><a href="/LoginComponent">X</a></button></div>
+  <h1 class="mb-3"> הרשמה </h1>
+
+  <div class="mb-3">
+    <input
+     class="form-control  {{Response[0].Isok ? '':'is-invalid'}}"
+    type="text"  maxlength="10" placeholder="שם פרטי" [(ngModel)]="AddUser.FirstName"
+    aria-describedby="validationServerFirstNameFeedback" required>
+     <div id="validationServerFirstNameFeedback" class="invalid-feedback">
+     {{Response[0].Message}}
+     </div>
+   </div>
+
+   <div class="mb-3">
+    <input
+     class="form-control  {{Response[1].Isok ? '':'is-invalid'}}"
+    type="text"  maxlength="10" placeholder="שם משפחה" [(ngModel)]="AddUser.LastName"
+    aria-describedby="validationServerLastNameFeedback" required>
+     <div id="validationServerLastNameFeedback" class="invalid-feedback">
+     {{Response[1].Message}}
+     </div>
+   </div>
+
+   <div class="mb-3">
+    <input
+     class="form-control  {{Response[2].Isok ? '':'is-invalid'}}"
+    type="text"  maxlength="25" placeholder="מייל" [(ngModel)]="AddUser.Mail"
+    aria-describedby="validationServerEmailFeedback" required>
+     <div id="validationServerEmailFeedback" class="invalid-feedback">
+     {{Response[2].Message}}
+     </div>
+   </div>
+
+
+   <div class="mb-3">
+     <label><strong>תאריך לידה</strong></label>
+    <input
+     class="form-control  {{Response[3].Isok ? '':'is-invalid'}}"
+    type="date"   [(ngModel)]="AddUser.Birthdate"
+    aria-describedby="validationServerBirthdateFeedback" required>
+     <div id="validationServerBirthdateFeedback" class="invalid-feedback">
+     {{Response[3].Message}}
+     </div>
+   </div>
+
+   <div class="mb-3">
+    <input
+     class="form-control  {{Response[4].Isok ? '':'is-invalid'}}"
+    type="text"  maxlength="12" placeholder="עיר" [(ngModel)]="City"
+    aria-describedby="validationServerCityFeedback" required>
+     <div id="validationServerCityFeedback" class="invalid-feedback">
+     {{Response[4].Message}}
+     </div>
+   </div>
+
+   <div class="mb-3">
+    <input
+     class="form-control  {{Response[5].Isok ? '':'is-invalid'}}"
+    type="text"  maxlength="12" placeholder="טלפון" [(ngModel)]="AddUser.Phone"
+    aria-describedby="validationServerPhoneFeedback" required>
+     <div id="validationServerPhoneFeedback" class="invalid-feedback">
+     {{Response[5].Message}}
+     </div>
+   </div>
+
+
+
+
+   <div class="mb-3">
+    <label><strong>סוג משתמש</strong></label>
+    <select [(ngModel)]="AddUser.Role" title="בחר תפקיד"
+     class="form-select  {{this.Response[6].Isok ? '' : 'is-invalid'}}"
+     aria-label="validationServerSelectFeedback" required>
+      <option selected disabled >בחר סוג משתמש</option>
+      <option  *ngFor="let item of options" [value]="item.value">{{item.name}}</option>
+    </select>
+    <div id="validationServerSelectFeedback" class="invalid-feedback">
+      {{this.Response[6].Message}}
+    </div>
+  </div>
+
+
+
+   <div class="mb-3">
+    <input
+     class="form-control  {{Response[7].Isok ? '':'is-invalid'}}"
+    type="{{Type}}"  maxlength="16" placeholder="סיסמה" [(ngModel)]="AddUser.Password"
+    aria-describedby="validationServerPasswordFeedback" required>
+    <div>
+     <i class="{{ShowPassword ? 'fas fa-eye' : 'fas fa-eye-slash' }}"
+      (click)="ShowPassword ? ShowPassword=false : ShowPassword=true ; Type =='password' ? Type ='text' : Type='password' " ></i>
+    </div>
+     <div id="validationServerPasswordFeedback" class="invalid-feedback">
+     {{Response[7].Message}}
+     </div>
+   </div>
+
+
+    <div class="form-check mb-3">
+      <b><a href="PolicyComponent">הסכם מדיניות הפרטיות</a></b>
+
+      <input
+        class="form-check-input  {{Response[8].Isok ? '':'is-invalid'}}"
+      type="checkbox" placeholder="הסכם מדיניות הפרטיות" [(ngModel)]="policyClick"
+      aria-describedby="validationServerCheckFeedback" required>
+      <br>
+        <div id="validationServerCheckFeedback" class="invalid-feedback">
+        {{Response[8].Message}}
+        </div>
+      </div>
+
+     <button class="bt "(click)="OnAddUser()">הרשמה</button>
+  <div class="mb-3 mt-3">
+    <app-toast-b  [Messages]="this.Message" (close)="ChangeOpenAlert($event)" *ngIf="this.OpenAlert==1"></app-toast-b>
+  </div>
+
+</div>
+

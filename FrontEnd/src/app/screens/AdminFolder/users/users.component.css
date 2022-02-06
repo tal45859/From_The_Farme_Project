@@ -1,0 +1,25 @@
+.heades{
+  margin-top: 10px;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+
+button{
+  direction: rtl;
+  text-align: center;
+  background-color: #19ac31;
+  border: none;
+  color: rgb(255, 255, 255);
+  /* padding: 5px 20px; */
+  text-decoration: none;
+  display: inline-block;
+  /* cursor: pointer; */
+  /* border-radius: 16px; */
+
+}
+button:hover {
+  background-color: #ddd;
+  color: black;
+}
+

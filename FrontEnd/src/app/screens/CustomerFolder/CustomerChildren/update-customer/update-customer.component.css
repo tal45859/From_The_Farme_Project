@@ -1,0 +1,43 @@
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  direction: rtl;
+  text-align: center;
+}
+button{
+  direction: rtl;
+  text-align: center;
+  background-color: #19ac31;
+  border: none;
+  color: rgb(255, 255, 255);
+  padding: 5px 20px;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 16px;
+
+}
+button:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+input
+{
+  text-align: center;
+}
+input::placeholder
+{
+  font-weight: bold;
+  text-align: center;
+  color: red;
+}
+
+@media only screen and (max-width: 600px) {
+  .container{
+    width: 80% !important;
+    margin:10%;
+  }
+  }
+

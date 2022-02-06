@@ -1,0 +1,7 @@
+<app-update-product  (NumOfStage)="GetStage($event)" [UpdatePost]="UpdatePost"  (UpdatePostObj)="GetUpdatePost($event)" *ngIf="NumOfStage==1"></app-update-product>
+
+
+ <app-update-post (NumOfStage)="GetStage($event)" [UpdatePost]="UpdatePost"  (UpdatePostObj)="GetUpdatePost($event)" *ngIf="NumOfStage==2"></app-update-post>
+
+
+  <app-update-image  [Token]="Token" [UpdatePost]="UpdatePost" *ngIf="NumOfStage==3"></app-update-image>

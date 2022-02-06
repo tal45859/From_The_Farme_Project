@@ -1,0 +1,88 @@
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.grid-container {
+  margin-left: 3%;
+  text-align: center;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+
+.card{
+  text-align: center;
+  margin-left:null;
+  margin-right: null;
+}
+
+.btmarg{
+  margin: 2%;
+  direction: rtl;
+  text-align: center;
+  background-color: #19ac31;
+  border: none;
+  color: rgb(255, 255, 255);
+  padding: 5px 20px;
+  text-decoration: none;
+  display: inline-block;
+  /* margin: 4px 2px; */
+  cursor: pointer;
+  border-radius: 16px;
+
+}
+.btmarg:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+
+
+
+
+@media only screen and (max-width: 600px) {
+  .container{
+    width: 80%;
+    margin:10%;
+  }
+
+
+  .grid-container {
+    text-align: center;
+    display: grid;
+    grid-template-columns: auto;
+    margin-left: -1%;
+    width: 100%;
+  }
+
+
+
+  .card{
+    text-align: center;
+    margin-left:null;
+    margin-right: null;
+    width: 100% !important;
+    font-size: 20px;
+    height: 100%;
+
+  }
+  /* !important */
+  .col{
+    margin: null ;
+    padding: null;
+    width: 100% !important;
+    margin-bottom: 18%;
+    /* height: 70%; */
+  }
+  .card-img-top
+  {
+    width: 16rem !important;
+  }
+
+ .mrgPagination
+  {
+    margin-left: -15%;
+  }
+
+}

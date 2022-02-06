@@ -1,0 +1,70 @@
+
+<div class="container mt-4 mb-3 w-25 p-3 border border-secondary  text-dark n form"  dir="rtl">
+  <h2 class="mb-3">עדכון פרטים אישיים</h2>
+
+  <div class="mb-3">
+    <label><strong>שם פרטי</strong></label>
+    <input  [(ngModel)]="MerchantDetaills.User.FirstName"  type="text" placeholder="שדה חובה אנא הזן" maxlength="10"
+     class="{{this.Response[0].Isok && MerchantDetaills.User.FirstName.length!=0 ? 'form-control is-valid' : 'form-control is-invalid'}}"
+      aria-describedby="validationServerFirstNameFeedback"   required>
+    <div id="validationServerFirstNameFeedback" class="invalid-feedback">
+      {{this.Response[0].Message}}
+    </div>
+  </div>
+
+
+  <div class="mb-3">
+    <label><strong>שם משפחה</strong></label>
+    <input  [(ngModel)]="MerchantDetaills.User.LastName"  type="text" placeholder="שדה חובה אנא הזן" maxlength="10"
+     class="{{this.Response[1].Isok && MerchantDetaills.User.LastName.length!=0 ? 'form-control is-valid' : 'form-control is-invalid'}}"
+      aria-describedby="validationServerLastNameFeedback"   required>
+    <div id="validationServerLastNameFeedback" class="invalid-feedback">
+      {{this.Response[1].Message}}
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label><strong>תאריך לידה</strong></label>
+    <input  [(ngModel)]="MerchantDetaills.User.Birthdate"  type="date" placeholder="שדה חובה אנא הזן"
+     class="{{this.Response[2].Isok && MerchantDetaills.User.Birthdate!=null ? 'form-control is-valid' : 'form-control is-invalid'}}"
+      aria-describedby="validationServerBirthdateFeedback"   required>
+    <div id="validationServerBirthdateFeedback" class="invalid-feedback">
+      {{this.Response[2].Message}}
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label><strong>טלפון</strong></label>
+    <input  [(ngModel)]="MerchantDetaills.User.Phone"  type="text" placeholder="שדה חובה אנא הזן" maxlength="12"
+     class="{{this.Response[3].Isok && MerchantDetaills.User.Phone.length!=0 ? 'form-control is-valid' : 'form-control is-invalid'}}"
+      aria-describedby="validationServerPhoneFeedback"   required>
+    <div id="validationServerPhoneFeedback" class="invalid-feedback">
+      {{this.Response[3].Message}}
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label><strong>עיר</strong></label>
+    <input  [(ngModel)]="MerchantDetaills.City"  type="text" placeholder="שדה חובה אנא הזן" maxlength="12"
+     class="{{this.Response[4].Isok && MerchantDetaills.City.length!=0 ? 'form-control is-valid' : 'form-control is-invalid'}}"
+      aria-describedby="validationServerCityFeedback"   required>
+    <div id="validationServerCityFeedback" class="invalid-feedback">
+      {{this.Response[4].Message}}
+    </div>
+  </div>
+
+
+  <div class="mb-3">
+    <label><strong>סיסמה</strong></label>
+    <input  [(ngModel)]="MerchantDetaills.User.Password"  type="{{Type}}" placeholder="שדה חובה אנא הזן" maxlength="16"
+     class="{{this.Response[5].Isok && MerchantDetaills.User.Password.length!=0 ? 'form-control is-valid' : 'form-control is-invalid'}}"
+      aria-describedby="validationServerPasswordFeedback"   required>
+      <i class="{{this.ShowPassword ? 'fas fa-eye' :'fas fa-eye-slash'}}" (click)="!ShowPassword ? ShowPassword=true : ShowPassword=false; Type=='password' ? Type='text':Type='password'"  title="ראה סיסמה"></i>
+    <div id="validationServerPasswordFeedback" class="invalid-feedback">
+      {{this.Response[5].Message}}
+    </div>
+  </div>
+
+  <button (click)="OnUpdate()">עדכן</button>
+  <div class="mt-3 mb-3"><app-toast-b  [Messages]="this.Message" (close)="ChangeOpenAlert($event)" *ngIf="this.OpenAlert==1"></app-toast-b></div>
+ </div>
