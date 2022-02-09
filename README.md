@@ -6,7 +6,11 @@ A project from the farmer is designed to give farmers the opportunity
 to advertise all types of products at all levels in order to sell them without any discrepancies.
 
 ## Images from project
+### Home page
 ![HomePage](https://github.com/tal45859/From_The_Farme_Project/blob/main/Screens/home.png)
+### Login page
 ![Login](https://github.com/tal45859/From_The_Farme_Project/blob/main/Screens/login.png)
+### Post Details
 ![details](https://github.com/tal45859/From_The_Farme_Project/blob/main/Screens/moredetails.png)
+### Sing in
 ![singin](https://github.com/tal45859/From_The_Farme_Project/blob/main/Screens/singin.png)
