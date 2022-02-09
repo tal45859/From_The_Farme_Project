@@ -1,3 +1,4 @@
+<div style="text-align:center">
 # Angular Project From The Farmer
 
 
@@ -22,3 +23,4 @@ to advertise all types of products at all levels in order to sell them without a
 ![details](https://github.com/tal45859/From_The_Farme_Project/blob/main/Screens/moredetails.png)
 ### Sing in
 ![singin](https://github.com/tal45859/From_The_Farme_Project/blob/main/Screens/singin.png)
+</div>
