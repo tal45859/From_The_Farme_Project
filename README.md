@@ -5,13 +5,13 @@
 A project from the farmer is designed to give farmers the opportunity
 to advertise all types of products at all levels in order to sell them without any discrepancies.
 
-##Code languages
--C#
--TS
--HTML5
--JS
--SQL Server db
--Css
+## Code languages
+- C#
+- TS
+- HTML5
+- JS
+- SQL Server db
+- Css
 
 ## Images from project
 ### Home page
