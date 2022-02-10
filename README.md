@@ -7,14 +7,21 @@ A project from the farmer is designed to give farmers the opportunity
 to advertise all types of products at all levels in order to sell them without any discrepancies.
 
 ## Code languages
-- C#
 - TS
 - HTML5
-- JS
-- SQL Server db
 - Css
+- JS
+- SQL
+- C#
 
-## Images from project
+## framework
+- Angular
+- ASP.NET Core Web API
+
+## Data Bases
+- SQL Server
+
+## Some pictures from the project
 ### Home page
 ![HomePage](https://github.com/tal45859/From_The_Farme_Project/blob/main/Screens/home.png)
 ### Login page
